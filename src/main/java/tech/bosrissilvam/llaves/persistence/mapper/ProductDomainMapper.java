@@ -7,6 +7,8 @@ import org.mapstruct.Mappings;
 import tech.bosrissilvam.llaves.dominio.ProductDomain;
 import tech.bosrissilvam.llaves.persistence.entity.Product;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface ProductDomainMapper {
 
@@ -15,6 +17,7 @@ public interface ProductDomainMapper {
             @Mapping(source = "name", target = "nameProductDomain")
     })
     ProductDomain toProductDomain(Product product);
+    List<ProductDomain> toProductsDomains(List<Product> products);
 
     @InheritInverseConfiguration
     @Mapping(target = "unitPrice", ignore = true)
