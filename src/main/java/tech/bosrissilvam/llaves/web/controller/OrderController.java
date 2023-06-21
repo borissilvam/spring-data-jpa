@@ -20,7 +20,7 @@ public class OrderController {
         return new ResponseEntity<>(orderService.getAll(), HttpStatus.OK);
     }
     @PostMapping("/save")
-    public ResponseEntity<OrderDomain> save(@PathVariable OrderDomain orderDomain){
+    public ResponseEntity<OrderDomain> save(@RequestBody OrderDomain orderDomain){
         return new ResponseEntity<>(orderService.save(orderDomain), HttpStatus.CREATED);
     }
 

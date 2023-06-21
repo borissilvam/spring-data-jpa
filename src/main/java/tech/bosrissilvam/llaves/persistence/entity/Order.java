@@ -13,11 +13,12 @@ import java.util.List;
 @Entity
 @Table(name = "orders")
 public class Order {
+    //
     @Id
     @Column(name = "order_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer orderId;
-    @Column(name = "creation_date", insertable = true, updatable = false)
+    @Column(name = "creation_date", insertable = true, updatable = true)
     @CreationTimestamp
     private LocalDateTime creationDate;
     @Enumerated(EnumType.STRING)

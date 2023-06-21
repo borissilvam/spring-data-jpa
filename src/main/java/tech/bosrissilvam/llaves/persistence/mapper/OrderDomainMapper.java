@@ -10,7 +10,7 @@ import tech.bosrissilvam.llaves.persistence.entity.Order;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {OrderDetailDomain.class})
+@Mapper(componentModel = "spring", uses = {OrderDetailDomainMapper.class})
 public interface OrderDomainMapper {
     @Mappings({
             @Mapping(source = "orderId", target = "orderDomainId"),

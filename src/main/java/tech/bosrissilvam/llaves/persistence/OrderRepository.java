@@ -26,6 +26,8 @@ public class OrderRepository implements IOrderRepository {
     public OrderDomain save(OrderDomain orderDomain) {
         Order order = mapper.toOrder(orderDomain);
 
+        System.out.println(order);
+
         order.getOrderDetails().forEach(orderDetail -> orderDetail.setOrder(order));
 
         return mapper.toOrderDomain(orderCrudReository.save(order));
